@@ -1,0 +1,3 @@
+(library 
+ (name verproSyntax)
+ (libraries zarith why3 menhirLib verproMonad))

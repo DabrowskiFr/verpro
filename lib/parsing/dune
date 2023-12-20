@@ -1,0 +1,8 @@
+(library 
+ (name verproParser)
+ (libraries verproSyntax zarith menhirLib))
+
+(ocamllex lexer)
+
+(menhir 
+ (modules parser))

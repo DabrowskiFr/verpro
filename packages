@@ -1,0 +1,8 @@
+ocaml-lsp-server
+ocamlformat 
+ocp-indent
+utop
+
+dune
+menhir
+zarith  

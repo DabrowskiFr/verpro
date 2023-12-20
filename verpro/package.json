@@ -1,0 +1,25 @@
+{
+  "name": "verpro",
+  "displayName": "verpro",
+  "description": "verpro file",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.83.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "vpro",
+      "aliases": ["VeRPro", "vpro"],
+      "extensions": [".vpro"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "vpro",
+      "scopeName": "source.vpro",
+      "path": "./syntaxes/vpro.tmLanguage.json"
+    }]
+  }
+}

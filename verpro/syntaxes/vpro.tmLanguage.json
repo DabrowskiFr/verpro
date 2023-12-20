@@ -1,0 +1,70 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "VeRPro",
+	"patterns": [
+		{
+			"match": "\\b(process)\\s+(\\p{L}|[_\\u00A0])(\\p{L}|[0-9_\\u00A0'])*",
+			"comment": "VerPro process keywords",
+			"captures": {
+				"1": {
+				  "name": "keyword.control.process.vpro"
+				},
+				"2": {
+				  "name": "entity.name.function.vpro"
+				}
+			},
+			"name": "keyword.control.process.vpro"
+		},
+		{
+			"match": "\\b(end)\\b",
+			"comment": "VeRPro process keywords",
+			"name": "keyword.control.end.vpro"
+		},
+		{
+			"match": "\\b(if|while|when|goto|otherwise|do)\\b",
+			"comment": "VeRPro process keywords",
+			"name": "keyword.control.body.vpro"
+		},
+		{
+			"match": "\\b(requires|ensures|invariant)\\b",
+			"comment": "VeRPro assertion keywords",
+			"name": "keyword.control.property.vpro"
+		},
+		{
+			"match": "\\b(state|input|output|var)\\b",
+			"comment": "VeRPro declaration keywords",
+			"name": "keyword.control.declaration.vpro"
+		},
+		{
+			"match": "\\b(int|bool)",
+			"comment": "Type keywords",
+			"name": "storage.type.vpro"
+		},
+		{
+			"match": "\\b((0(x|X)[0-9a-fA-F]+)|([0-9]+(\\.[0-9]+)?))\\b",
+			"name": "constant.numeric.vpro"
+		},
+		{
+			"match": "\\b(false|true|always|True|False|forall|exists)\\b",
+			"comment": "Gallina builtin constructors",
+			"name": "constant.language.vpro"
+		  },
+		{
+			"include": "#strings"
+		}
+	],
+	"repository": {
+		"strings": {
+			"name": "string.quoted.double.vpro",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.vpro",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "source.vpro"
+}

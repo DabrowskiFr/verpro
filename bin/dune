@@ -1,0 +1,4 @@
+(executable
+(public_name verpro)
+ (name main)
+ (libraries verproSyntax verproParser why3))

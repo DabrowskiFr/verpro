@@ -1,0 +1,26 @@
+process p
+
+    state s1, s2
+    input i : int, b : bool
+    output o : bool
+
+    requires { True }
+    ensures { True }
+
+    s1: invariant { x = false }
+        when i >= 10 do 
+            x := true;
+            skip
+        goto s2 ensures { x = true }
+        otherwise do 
+            skip
+        goto s2 ensures { x = false }
+    s2: invariant { x = true }
+        when i >= 10 do
+            x := false; 
+            skip
+        goto s2 ensures { x = false }
+        otherwise do 
+            skip
+        goto s2 ensures { x = true }
+end
